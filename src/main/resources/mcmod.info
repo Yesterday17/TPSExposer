@@ -1,0 +1,16 @@
+[
+{
+  "modid": "tpsexposer",
+  "name": "TPSExposer",
+  "description": "A Minecraft Mod to expose the server's TPS.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Yesterday17"],
+  "credits": "CFPA, 123, and Tranquility's lagggggging server.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
