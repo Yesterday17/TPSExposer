@@ -19,7 +19,7 @@ import java.text.DecimalFormat;
 
 import static com.google.common.math.DoubleMath.mean;
 
-@Mod(modid = "tpsexposer", name = "TPSExposer", version = "0.0.1-SNAPSHOT", serverSideOnly = true)
+@Mod(modid = "tpsexposer", name = "TPSExposer", version = "1.0.0", serverSideOnly = true)
 @SideOnly(Side.SERVER)
 public class TPSExposer {
     private static Logger logger;
