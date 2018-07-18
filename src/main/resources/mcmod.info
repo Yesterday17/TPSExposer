@@ -5,7 +5,7 @@
   "description": "A Minecraft Mod to expose the server's TPS.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/Yesterday17/TPSExposer",
   "updateUrl": "",
   "authorList": ["Yesterday17"],
   "credits": "CFPA, 123, and Tranquility's lagggggging server.",
