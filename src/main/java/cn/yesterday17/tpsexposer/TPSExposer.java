@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import sun.nio.ch.ThreadPool;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -23,6 +24,7 @@ import static com.google.common.math.DoubleMath.mean;
 @SideOnly(Side.SERVER)
 public class TPSExposer {
     private static Logger logger;
+    private HttpServer server;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -33,12 +35,17 @@ public class TPSExposer {
     @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event) {
         try {
-            HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+            server =  HttpServer.create(new InetSocketAddress(8080), 0);
             server.createContext("/", new TPSHandler(event.getServer()));
             server.start();
         } catch(Exception e){
             logger.error(e.getMessage());
         }
+    }
+
+    @Mod.EventHandler
+    public void serverStopping(FMLServerStoppingEvent event){
+        this.server.stop(0);
     }
 
     static class TPSHandler implements HttpHandler{
